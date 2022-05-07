@@ -1,0 +1,35 @@
+<div class="register" fxLayoutAlign="center center">
+    <mat-card class="card" >
+      <button style="margin-left: 0; display: block;" (click)="navigationTo('/login')" mat-button>
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <div class="title" fxLayout="column">
+        <h2>Registration</h2>
+        <div fxLayout="row" fxLayoutAlign="center">
+          <form [formGroup]="registerform" fxLayoutAlign="center center" fxLayoutGap="10px" (ngSubmit)="register()">
+            <div fxLayout="column" class="form-container">
+              
+              <mat-form-field>
+                <input matInput required placeholder="E-address" formControlName="email" type="email" />
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput required placeholder="Password" formControlName="password" type="password" />
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput required placeholder="Password again" formControlName="password2" type="password" />
+                <mat-hint >Password at least 6 characters</mat-hint>
+              </mat-form-field>
+              
+              <mat-card class="alert" *ngIf="alertMessage">
+                {{alertMessage}}
+              </mat-card>
+
+              <br>
+              <button type="submit" mat-button [disabled]="registerform.invalid">Registration</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </mat-card>
+  </div>

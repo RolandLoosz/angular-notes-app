@@ -1,0 +1,25 @@
+<div class="container col col-12 col-lg-6 text-start p-2">
+    <mat-card>
+        <mat-card-title>
+            {{ title }}
+        </mat-card-title>
+        <mat-card-subtitle>{{ date | date | listPipe }}</mat-card-subtitle>
+        <mat-divider>
+        </mat-divider>
+        <mat-card-content>
+        <br>
+            {{ description }}
+           
+        </mat-card-content>
+        <mat-card-actions align="end">
+
+            <button mat-stroked-button color="warn" (click)="deleteClicked()">
+                <mat-icon>delete_outline</mat-icon>
+            </button> 
+
+            <button mat-stroked-button  (click)="modifyNote()">
+                <mat-icon>create</mat-icon>
+            </button> 
+        </mat-card-actions>
+    </mat-card>
+</div>

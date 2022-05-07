@@ -1,0 +1,24 @@
+
+
+<div class="position-absolute top-50 start-50 translate-middle">
+    <form [formGroup]="newpasswordform" (ngSubmit)="submitPassword()" class="form">
+        <div>
+          <mat-form-field class="max-width">
+            <mat-label>New password</mat-label>
+            <input formControlName="newpassword1" type="password" matInput>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="max-width">
+            <mat-label>New password again</mat-label>
+            <input formControlName="newpassword2" type="password" matInput>
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-raised-button color="warn" [disabled]="newpasswordform.invalid"
+            type="submit">Change</button>
+        </div>
+      </form>
+    
+
+</div>

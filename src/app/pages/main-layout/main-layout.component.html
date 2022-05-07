@@ -1,0 +1,27 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" style="cursor: pointer;" (click)="navigationTo('home')">Notes App</a>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" style="margin-right:10px" (click)="navigationTo('home/profile')">
+            Profile
+        </button>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" style="margin-right:10px" (click)="logout()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </div>
+</nav>
+
+
+<div class="layout-box" style="height: 100%; width: 100wh;">
+
+    <div class="page-content">
+        <router-outlet>
+
+        </router-outlet>
+    </div>
+
+
+</div>

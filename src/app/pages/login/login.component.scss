@@ -1,0 +1,32 @@
+.login {
+    display: flex;
+    justify-content: center;
+    padding: 180px 0px;
+    text-align: center;
+    background-color: rgb(39, 36, 36);
+}
+.kartya {
+    height: 360px;
+    padding: 18px 30px;
+    width: 380px;
+    background-color: #9c27b0;  
+    border-radius: 8px;
+}
+  
+.title {
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+  
+.alert {
+    box-shadow: none;
+    color:black;
+    background-color: rgb(190, 101, 79);
+    padding:7px;
+}
+  
+body{
+   background-color: brown;
+}
+

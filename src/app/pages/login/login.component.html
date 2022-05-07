@@ -1,0 +1,26 @@
+<div class="login" fxLayoutAlign="center center">
+  <mat-card class="kartya">
+    <div class="title" fxLayout="column">
+      <h1>Login</h1>
+      <div fxLayout="row" fxLayoutAlign="center">
+        <form [formGroup]="loginform" fxLayoutAlign="center center" fxLayoutGap="10px" (ngSubmit)="login()">
+          <div fxLayout="column" class="form-container">
+            <mat-form-field>
+              <input matInput required placeholder="E-mail" formControlName="email" type="email" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput required placeholder="Password" formControlName="password" type="password" />
+            </mat-form-field>
+            <br>
+            <button mat-button [disabled]="loginform.invalid">Login</button>
+            <br><br>
+
+
+            <div><button mat-button style="color:rgb(255, 255, 255)" (click)="navigationTo('/signup')" >Don't have profile? Register here!</button></div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </mat-card>
+</div>
