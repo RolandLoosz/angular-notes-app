@@ -67,7 +67,7 @@ import { MatDialog } from '@angular/material/dialog';
         }))
       ])
     ]),
-    
+
     trigger('listAnim', [
       transition('* => *', [
         query(':enter', [
@@ -101,7 +101,7 @@ export class NotesListComponent implements OnInit {
       this.notes=data;
       this.filteredNotes = this.notes;
     });
-    
+
     console.log("Notes tömb elemei:");
     console.log(this.notes);
 
@@ -115,20 +115,20 @@ export class NotesListComponent implements OnInit {
   addNote() {
     const dialogConfig = new MatDialogConfig();
     this.dialog.open(NoteDetailsComponent, {
-      width: '50%',
+      width: '70%',
       autoFocus: true,
       disableClose: false,
 
     });
   };
 
- 
+
 
   filter(query: string) {
     query = query.toLowerCase().trim();
     let allResults: Note[] = new Array<Note>();
     let terms: string[] = query.split(' ');
-    
+
     terms = this.removeDuplicates(terms);
 
     terms.forEach(term => {

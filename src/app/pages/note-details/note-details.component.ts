@@ -17,12 +17,13 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./note-details.component.scss']
 })
 export class NoteDetailsComponent implements OnInit {
-  
+  ttl: string = "";
+
   note: Note;
   noteId: number;
   new: boolean;
   notes: Note[] = new Array<Note>();
-  
+
   noteform = new FormGroup({
     id: new FormControl(null),
     title: new FormControl(''),
@@ -44,10 +45,10 @@ export class NoteDetailsComponent implements OnInit {
     });
   }
 
-  
+
   onSubmit() {
     if (!this.noteform.get('id')?.value) {
-      
+
       this.notesService.create(this.noteform.value);
       console.log("ujat keszit:"+ !this.noteform.get('id'));
       console.log("ido "+this.noteform.value.date);
@@ -55,10 +56,10 @@ export class NoteDetailsComponent implements OnInit {
       this.notesService.update(this.noteform.value);
       console.log("modosit");
     }
-    
+
     this.dialogRef.close();
   }
- 
+
   cancel() {
     console.log("kilépés");
     this.noteform.reset();
