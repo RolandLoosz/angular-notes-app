@@ -25,10 +25,6 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.loginform.get("email")?.value, this.loginform.get("password")?.value
       ).then(result => {
         this.navigationTo('/home');
-        // if(this.authService.isLoggedIn){
-        //   this.isSignedIn = true
-        // }
-    
       }, (error) => {
         console.error(error);
         alert('Wrong username or password.')
