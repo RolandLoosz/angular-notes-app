@@ -3,13 +3,14 @@
 
         <mat-icon class="mx-3">search</mat-icon>
         <mat-form-field>
-            <input matInput (keyup)="filter($event.target.value)" type="text" name="search" placeholder="Search" style="width: 120%;" maxlength="20">
+            <input matInput (keyup)="filter($event.target.value)" type="text" name="search" placeholder="Search" style="width: 120%;" maxlength="20" [(ngModel)]="src">
         </mat-form-field>
 
         <br><button mat-raised-button color="primary" style="width: 50%;" (click)="addNote()">
             <mat-icon>add</mat-icon> Add
         </button>
 
+        <p class="m-3" *ngIf="src.length != 0" [ngStyle]="{'font-style': 'italic'}">Your search results for {{ src }}</p>
     </div>
 
     <br><div *ngIf="filteredNotes.length === 0">
@@ -18,7 +19,7 @@
             <mat-icon>refresh</mat-icon>Refresh
         </button>
     </div>
-
+    <br>
     <div class="notes-list" [@listAnim]>
         <app-note-card
         style="cursor: pointer; display: block;"
@@ -30,10 +31,10 @@
         [description]="item.description"
         [date]="item.date"
         ></app-note-card>
-        
+
     </div>
- 
-    
+
+
 
     <mat-paginator [length]="notes.length" [pageSize]="10" [pageSizeOptions]="[10, 20, 30]" (page)="OnPageChange($event)"
         showFirstLastButtons>

@@ -87,6 +87,7 @@ import { MatDialog } from '@angular/material/dialog';
   ]
 })
 export class NotesListComponent implements OnInit {
+  src: string = "";
 
   notes: Note[] = new Array<Note>();
   filteredNotes: Note[] = new Array<Note>();
