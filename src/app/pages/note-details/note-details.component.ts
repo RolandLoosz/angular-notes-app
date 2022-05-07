@@ -50,18 +50,14 @@ export class NoteDetailsComponent implements OnInit {
     if (!this.noteform.get('id')?.value) {
 
       this.notesService.create(this.noteform.value);
-      console.log("ujat keszit:"+ !this.noteform.get('id'));
-      console.log("ido "+this.noteform.value.date);
     }else{
       this.notesService.update(this.noteform.value);
-      console.log("modosit");
     }
 
     this.dialogRef.close();
   }
 
   cancel() {
-    console.log("kilépés");
     this.noteform.reset();
     this.dialogRef.close();
   }

@@ -11,24 +11,22 @@ import { NotesListComponent } from '../pages/notes-list/notes-list.component';
   styleUrls: ['./note-card.component.scss']
 })
 export class NoteCardComponent implements OnInit {
-  @Input('title') title: string; 
+  @Input('title') title: string;
   @Input('description') description: string;
   @Input('id') id: string;
   @Input('date') date: number;
   @Output('delete') deleteEvent: EventEmitter<void> = new EventEmitter<void>();
-  
+
   // user=JSON.parse(localStorage.getItem('user') as string) as firebase.default.User;
   // userId=this.user.uid;
 
   constructor(private notesService :NotesService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    console.log(this.title);
   }
 
   deleteClicked() {
     //this.deleteEvent.emit();
-    console.log(this.id);
     this.notesService.delete(this.id);
   }
 
@@ -42,7 +40,7 @@ export class NoteCardComponent implements OnInit {
         id:this.id,
         title:this.title,
         description :this.description,
-        
+
       }
 
     });

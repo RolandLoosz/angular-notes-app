@@ -17,7 +17,6 @@ export class SignupComponent implements OnInit {
   alertMessage = '';
 
   ngOnInit(): void {
-    //console.log(this.alertMessage);
   }
 
   constructor(private authService: AuthService, private snackBar: MatSnackBar, private router: Router,private userService: UserService) { }
@@ -32,9 +31,9 @@ export class SignupComponent implements OnInit {
 
   async register() {
     if (this.registerform.valid) {
-      console.log("hiba");
+
       if (this.registerform.value.password === this.registerform.value.password2) {
-        console.log("hiba");
+
         this.authService.signup(this.registerform.get("email")?.value, this.registerform.get("password")?.value
         ).then(result=> {
           const user: User = {
@@ -42,8 +41,7 @@ export class SignupComponent implements OnInit {
             email: this.registerform.get('email')?.value,
           };
           this.userService.create(user).then(_ => {
-            console.log('User added successfully.');
-          console.log("navigation to login"); 
+
         }).catch(error => {
             console.error(error);
           })
@@ -58,7 +56,7 @@ export class SignupComponent implements OnInit {
       }
     }
   }
- 
+
   navigationTo(url: string): void {
     this.router.navigateByUrl(url);
   }

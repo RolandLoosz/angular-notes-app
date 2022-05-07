@@ -21,7 +21,6 @@ export class AppComponent {
     this.routes = this.router.config.map(conf => conf.path) as string[];
 
     this.authService.isUserLoggedIn().subscribe(user => {
-      console.log(user);
       this.loggedInUser = user;
       localStorage.setItem('user', JSON.stringify(this.loggedInUser));
     }, error => {

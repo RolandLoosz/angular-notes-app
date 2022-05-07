@@ -102,11 +102,6 @@ export class NotesListComponent implements OnInit {
       this.notes=data;
       this.filteredNotes = this.notes;
     });
-
-    console.log("Notes tömb elemei:");
-    console.log(this.notes);
-
-    //location.reload();
   }
 
   reloadCurrentPage() {

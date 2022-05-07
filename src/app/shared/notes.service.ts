@@ -14,22 +14,19 @@ export class NotesService {
   constructor(private afs: AngularFirestore, private auth:AuthService) { }
 
   create(note: Note) {
-    
     note.userid=this.user.uid;
     note.id = this.afs.createId();
     note.date= new Date().getTime();
-    
     return this.afs.collection<Note>(this.collectionName).doc(note.id).set(note);
-    
+
   }
 
-  getAll() { 
+  getAll() {
     const user=JSON.parse(localStorage.getItem('user') as string) as firebase.default.User;
     return this.afs.collection<Note>(this.collectionName, ref=> ref.where('userid','==',user.uid)).valueChanges();
   }
 
   update(note: Note) {
-    //const user=JSON.parse(localStorage.getItem('user') as string) as firebase.default.User;
     note.userid=this.user.uid;
     note.date= new Date().getTime();
     return this.afs.collection<Note>(this.collectionName).doc(note.id).set(note);

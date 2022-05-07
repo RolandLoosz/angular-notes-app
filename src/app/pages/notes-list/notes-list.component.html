@@ -14,7 +14,7 @@
     </div>
 
     <br><div *ngIf="filteredNotes.length === 0">
-        <p class="p-1 text-danger">Please refresh</p>
+        <p class="p-1 text-danger">Can't see your notes? Refresh the page or add new ones.</p>
         <button mat-raised-button color="primary" style="width: 50%;" (click)="reloadCurrentPage()">
             <mat-icon>refresh</mat-icon>Refresh
         </button>
