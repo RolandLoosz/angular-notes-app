@@ -6,6 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `npm install`
 
-Ha elcsúszik a weboldal/nem jelenik meg a sílus:
+Ha elcsúszik a weboldal/nem jelenik meg a stílus:
 `npm install bootstrap`
 
