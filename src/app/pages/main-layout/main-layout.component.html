@@ -1,16 +1,14 @@
 <nav class="navbar navbar-dark bg-dark">
-    <div class="container">
+    <div class="container-fluid">
         <a class="navbar-brand" style="cursor: pointer;" (click)="navigationTo('home')">Notes App</a>
-    </div>
-    <div>
-        <button mat-raised-button color="primary" style="margin-right:10px" (click)="navigationTo('home/profile')">
+        <div>
+        <button mat-raised-button color="primary" class="m-2" (click)="navigationTo('home/profile')">
             Profile
         </button>
-    </div>
-    <div>
-        <button mat-raised-button color="primary" style="margin-right:10px" (click)="logout()">
+        <button mat-raised-button color="primary" class="m-2" (click)="logout()">
             <mat-icon>logout</mat-icon>
         </button>
+      </div>
     </div>
 </nav>
 
